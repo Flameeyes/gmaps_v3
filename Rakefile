@@ -16,6 +16,8 @@ begin
     # gem is a Gem::Specification... see http://www.rubygems.org/read/chapter/20 for additional settings
   end
   Jeweler::GemcutterTasks.new
+
+  task :spec => :check_dependencies
 rescue LoadError
   puts "Jeweler (or a dependency) not available. Install it with: gem install jeweler"
 end
@@ -37,8 +39,6 @@ begin
 rescue LoadError
   puts "RSpec (or a dependency) not available. Install it with: gem install rspec"
 end
-
-task :spec => :check_dependencies
 
 require 'rake/rdoctask'
 Rake::RDocTask.new do |rdoc|
